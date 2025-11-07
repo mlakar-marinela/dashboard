@@ -1,0 +1,9 @@
+.stats_container{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50vw, -75vh);
+    width: 20vw;
+    height: 50vh;
+}

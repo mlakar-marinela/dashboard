@@ -1,0 +1,29 @@
+.nav-bar{
+    width: 20vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+}
+
+button{
+    border: 10px black;
+    height: 30px;
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 10%;
+    margin-left: 0vw;
+}
+
+span{ 
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    
+}
+
+.hidden{
+    display: none;
+}
+

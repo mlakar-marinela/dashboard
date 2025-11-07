@@ -1,0 +1,22 @@
+form{
+    display: grid;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50vw,-75vh);
+    border: 2px solid black;
+    width: 20vw;
+    height: 50vh;
+    visibility: visible;
+}
+
+label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-top: 0.5vh;
+}
+
+input{
+    width: 10vw;
+    height: 5vh;
+}
