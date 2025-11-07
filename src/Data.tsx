@@ -10,7 +10,7 @@ function Data() {
     const data2 = (document.getElementById('data2') as HTMLInputElement).value;
     const data3 = (document.getElementById('data3') as HTMLInputElement).value;
   
-  const finData = finDatas.find((item) => item.year === data1);
+    const finData = finDatas.find((item) => item.year === data1);
    if (finData){
       finData.turnover = Number(data2);
       finData.profit = Number(data3);

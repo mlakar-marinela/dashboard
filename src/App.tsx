@@ -25,30 +25,22 @@ function App() {
           <tbody>
             <tr>
               <td>
-                <button onClick={showData}>
-                  <span>Data</span>
-                </button>
+                <button onClick={showData}><span>Data</span></button>
               </td>
             </tr>
             <tr>
               <td>
-                <button onClick={showStats}>
-                  <span>Statistics</span>
-                </button>
+                <button onClick={showStats}><span>Statistics</span></button>
               </td>
             </tr>
             <tr>
               <td>
-                <button>
-                  <span>Performance</span>
-                </button>
+                <button><span>Performance</span></button>
               </td>
             </tr>
             <tr>
               <td>
-                <button>
-                  <span>Score</span>
-                </button>
+                <button><span>Score</span></button>
               </td>
             </tr>
           </tbody>
