@@ -1,9 +1,15 @@
-.stats_container{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    transform: translate(50vw, -75vh);
-    width: 20vw;
-    height: 50vh;
+.stats_container {
+  display: flex;
+  flex-wrap: wrap;     
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 50dvw;         
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+canvas {
+  flex: 0 1 calc(50% - 1rem);
+  height: 250px !important;   
 }

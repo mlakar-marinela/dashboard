@@ -1,12 +1,17 @@
 import './App.css';
 import Data from './Data';
 import Statistics from './Statistics';
+import Score from './Score';
 import { useState } from 'react';
-import { finDatas } from './dataObjects';
+import { useSelector } from 'react-redux';
+import type { RootState } from './store';
 
 function App() {
+  const financialDatas = useSelector((state:RootState) => state.data_update.financialDatas );
+  
   const [showDataView, setShowDataView] = useState(false);
   const [showStatsView, setShowStatsView] = useState(false);
+  const [showScoreView, setShowScoreView] = useState(false);
 
   const showData = () => {
     setShowDataView(true);
@@ -14,51 +19,43 @@ function App() {
   };
 
   const showStats = () => {
-    setShowStatsView(true);
     setShowDataView(false);
+    setShowStatsView(true);
+    setShowScoreView(false);
+  };
+
+  const shoWScore = () => {
+     setShowDataView(false);
+     setShowStatsView(false);
+     setShowScoreView(true);   
   };
 
   return (
-    <div className="App">
+    <main className="App">
+      
       <div className="nav-bar">
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <button onClick={showData}><span>Data</span></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button onClick={showStats}><span>Statistics</span></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button><span>Performance</span></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button><span>Score</span></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <button onClick={showData} ><span>Data</span></button>
+          <button onClick={showStats}><span>Performance</span></button>
+          <button onClick={shoWScore}><span>Score</span></button>
       </div>
 
       {showDataView && (
-        <div id="container1">
+        <div id="data_entry_container">
           <Data />
         </div>
       )}
       {showStatsView && (
-        <div id="container2">
-          <Statistics data={finDatas} />
+        <div id="container_for_stats">
+          <Statistics data={financialDatas} />
+        </div>
+      )}
+      { showScoreView && (
+        <div id="scoring_container">
+          <Score data={financialDatas} />
         </div>
       )}
 
-    </div>
+    </main>
   );
 }
 

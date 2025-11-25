@@ -1,0 +1,8 @@
+.score_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50vw, -75vh);
+    width: 20vw;
+    height: 50vh;
+}

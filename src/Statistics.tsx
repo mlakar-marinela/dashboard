@@ -5,8 +5,11 @@ import { useEffect, useRef } from 'react';
 interface StatisticsProps {
   data: { year: number; turnover: number; profit: number }[];
 }
+  function Statistics({ data }: StatisticsProps) {
 
-function Statistics({ data }: StatisticsProps) {
+  if (!data || data.length < 3) {
+    return <div>No data available for statistics</div>;
+  }
   const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -26,7 +29,9 @@ function Statistics({ data }: StatisticsProps) {
               data[1].turnover,
               data[2].turnover
             ],
-            borderWidth: 1
+            borderWidth: 2,
+            backgroundColor: ['rgba(102, 0, 255, 0.8)', 'rgba(0, 34, 255, 0.9)', 'rgba(0, 102, 255, 1)'],
+            barThickness: 50
           }
         ]
       },
@@ -63,15 +68,18 @@ function Statistics({ data }: StatisticsProps) {
               data[1].profit,
               data[2].profit
             ],
-            borderWidth: 1
+            borderWidth: 2,
+            backgroundColor: ['rgba(0, 251, 255, 0.8)', 'rgba(0, 255, 213, 0.9)', 'rgba(0, 255, 98, 1)'],
+            barThickness: 50,
           }
         ]
       },
       options: {
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true,
           }
+
         }
       }
     });
@@ -81,10 +89,94 @@ function Statistics({ data }: StatisticsProps) {
     };
   }, [data]);
 
+  const canvasRef3 = useRef<HTMLCanvasElement | null>(null);
+  
+  useEffect(() =>{
+
+    if(!canvasRef3.current){
+      return;
+    }
+
+    const chart3 = new Chart(canvasRef3.current, {
+       type: 'bar',
+      data: {
+        labels: ['2023', '2024'],
+        datasets: [
+          {
+            label: 'Evolution of turnover (%)',
+            data: [
+             Math.round (((data[1].turnover - data[0].turnover)/ data[0].turnover)*100),
+             Math.round (((data[2].turnover - data[1].turnover)/ data[1].turnover)*100)
+            ],
+            borderWidth: 2,
+            backgroundColor: ['rgba(0, 255, 72, 0.8)', 'rgba(13, 255, 0, 0.9)', 'rgba(38, 255, 0, 1)'],
+            barThickness: 50,
+            barPercentage: 1.0
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          }
+
+        }
+      }
+    });
+
+    return () => {
+      chart3.destroy();
+    };
+  }, [data]);
+
+  const canvasRef4 = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() =>{
+
+    if(!canvasRef4.current){
+      return;
+    }
+
+    const chart4 = new Chart(canvasRef4.current, {
+       type: 'bar',
+      data: {
+        labels: ['2023', '2024'],
+        datasets: [
+          {
+            label: 'Evolution of profit (%)',
+            data: [
+             Math.round (((data[1].profit - data[0].profit)/ data[0].profit)*100),
+             Math.round (((data[2].profit - data[1].profit)/ data[1].profit)*100)
+            ],
+            borderWidth: 2,
+            backgroundColor: ['rgba(255, 238, 0, 0.8)', 'rgba(255, 179, 0, 0.9)', 'rgba(255, 89, 0, 1)'],
+            barThickness: 50,
+            barPercentage: 1.0
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          }
+
+        }
+      }
+    });
+
+    return () => {
+      chart4.destroy();
+    };
+  }, [data]);
+
   return (
     <div className='stats_container'>
       <canvas id="chart1" ref={canvasRef1}></canvas>
       <canvas id="chart2" ref={canvasRef2}></canvas>
+      <canvas id="chart3" ref={canvasRef3}></canvas>
+      <canvas id="chart4" ref={canvasRef4}></canvas>
     </div>
   );
 }
