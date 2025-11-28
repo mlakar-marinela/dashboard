@@ -13,3 +13,51 @@ canvas {
   flex: 0 1 calc(50% - 1rem);
   height: 250px !important;   
 }
+
+@media (min-width:300px) and (max-width:600px){
+  
+  .stats_container{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 10dvh;
+     width: 55dvw;
+     height: 55dvh;
+  }
+
+  canvas{
+    transform: translate(4dvw,1dvh);
+  }
+}
+
+@media (min-width:601px) and (max-width:900px){
+
+  .stats_container{
+    display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 5dvh;
+     width: 55dvw;
+     height: 55dvh;
+  }
+
+  canvas{
+    transform: translate(4dvw,1dvh);
+  }
+}
+
+@media (min-width:901px) and (max-width:1979px){
+ 
+  .stats_container{
+    display: grid;
+    gap: 2dvw; 
+    width: 30dvw;
+    height: 30dvh;
+  }
+
+  .canvas{
+    transform: translate(25dvw,-10dvh);
+  }
+}
