@@ -1,57 +1,9 @@
-*{
- margin:0;
- padding:0;
-}
-
-.App{
-display:flex;
-justify-content: baseline;
-align-items: center;
-flex-direction: row;
-}
-
-.nav-bar{
-    width: 20dvw;
-    height:100dvh;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    background-color: darkblue;
-}
-
-button{
-    border: 10px solid transparent;
-    height: 5dvh;
-    width: 10dvw;
-    background-color: transparent;
-    margin-bottom: 2dvh;
-}
-
-button:hover{
-   background-color: rgb(3, 3, 95);
-}
-
-span{ 
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    
-}
-
-.hidden{
-    display: none;
-}
-
 html, body{
     height: 100%;
     margin:0;
     padding:0;
 }
 
-*, .App, .nav-bar, button, span, .hidden{
-    resize:both;
-}
 
 .App{
     display:flex;
