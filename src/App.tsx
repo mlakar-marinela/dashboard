@@ -16,6 +16,7 @@ function App() {
   const showData = () => {
     setShowDataView(true);
     setShowStatsView(false);
+    setShowScoreView(false);
   };
 
   const showStats = () => {
