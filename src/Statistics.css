@@ -15,7 +15,8 @@ canvas {
   width: 100%; 
   height: 100%; 
   display: block;
-  transform: translate(25dvw,-15dvh);
+  transform: translate(21dvw,-15dvh);
+  background-color:rgba(255,255,255,0.4);
 }
 
 @media (min-width:300px) and (max-width:600px){
@@ -52,7 +53,7 @@ canvas {
   }
 }
 
-@media (min-width:901px) and (max-width:1979px){
+@media (min-width:901px) and (max-width:1920px){
  
   .stats_container{
     display: grid;

@@ -11,6 +11,8 @@ html, body{
     flex-direction: row;
 }
 
+
+
 .nav-bar{
     width: 20dvw;
     height: 100dvh;
@@ -20,6 +22,9 @@ html, body{
     justify-content:center;
     align-items: center;
     background-color: darkblue;
+    position: relative;
+    z-index: 1000;
+    transform: translateX(-10%);
 }
 
 button{
@@ -30,6 +35,7 @@ button{
     margin-bottom: 2dvh;
     position: relative;
     align-self: center;
+    display: block;
 }
 
 button:hover{
@@ -41,6 +47,22 @@ span{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     
+}
+
+input[type="button"]{
+   border:2px solid darkblue;
+   background-color: transparent;
+   width:2dvw;
+   height: 4dvh;
+   transform:translate(7dvw,-35vh);
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 20px;
+   color: darkblue;
+}
+
+input[type="button"]:hover{
+    background-color: rgb(3, 3, 95);
+    color:white;
 }
 
 .hidden{
@@ -61,9 +83,15 @@ span{
          margin-bottom: 1dvh;
          overflow: hidden;
     }
+
+    .span{
+        font-size: 16px;
+    }
+
 }
 
 @media (min-width:601px) and (max-width:900px){
+
    .nav-bar{
         width: 35dvw;
         height: 100dvh;
@@ -75,10 +103,16 @@ span{
          width: 35dvw;
          margin-bottom: 1dvh;
          overflow: hidden;
-    } 
+    }
+    
+    .span{
+        font-size: 18px;
+    }
+
 }
 
-@media (min-width:901px) and (max-width:3840px){
+@media (min-width:901px) and (max-width:1920px){
+
      .nav-bar{
         width: 20dvw;
         height: 100dvh;
@@ -86,10 +120,14 @@ span{
     }
 
     button{
-         height: 5dvh;
-         width: 10dvw;
+         height: 6dvh;
+         width: 15dvw;
          margin-bottom: 2dvh;
          overflow: hidden;
+    }
+
+     .span{
+        font-size: 20px;
     }
 
 }

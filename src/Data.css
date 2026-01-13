@@ -7,9 +7,10 @@ form{
     right:50%;
     transform: translateY(-25dvh);
     border: 2px solid black;
+    border-radius: 15% ;
     width: 20dvw;
     height: 50dvh;
-    visibility: visible;
+    background-color:rgba(255,255,255,0.3);
 }
 
 label{
@@ -23,17 +24,72 @@ input,select{
     height: 5dvh;
 }
 
-input[type='button']{
+input[type='submit']{
     border-radius: 25%;
-    border: 2px solid white;
-    background-color: white;
+    border: 2px solid transparent;
+    background-color: transparent;
 }
 
-input[type='button']:hover{
-     background-color: rgba(245, 245, 245, 0.712);
+input[type='submit']:hover{
+     background-color: rgba(255, 255, 255, 0.911);
 }
 
 input,select{
-  border: 2px solid black;
-  background-color: white;
+  border: 2px solid transparent;
+  background-color: rgb(240, 247, 255);
+}
+
+@media (min-width:300px) and (max-width:600px){
+
+    form{
+    height:40dvh;
+    width: 50dvw;
+    transform: translate(-7.5dvw,-20dvh);
+   }
+
+   input,select{
+    width: 35dvw;
+   }
+
+   label{
+    font-size: 16px;
+    }
+    
+}
+
+@media (min-width:601px) and (max-width:900px){
+
+   form{
+    height:37dvh;
+    width: 45dvw;
+    transform: translate(-5dvw,-16dvh);
+   }
+
+   input,select{
+    width: 25dvw;
+   }
+
+   label{
+    font-size: 18px;
+    }
+
+}
+
+
+@media (min-width:901px) and (max-width:1920px){
+
+   form{
+    height:45dvh;
+    width: 25dvw;
+    transform: translate(-3dvw,-20dvh);
+   } 
+ 
+   input,select{
+    width: 15dvw;
+   }
+
+   label{
+    font-size: 20px;
+    }
+
 }

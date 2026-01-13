@@ -1,0 +1,5 @@
+body{
+    background-image: url('light_background_image.jpg');
+    background-size: cover;
+    background-blend-mode: hue;
+}

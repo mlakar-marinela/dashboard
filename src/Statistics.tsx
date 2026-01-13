@@ -30,7 +30,7 @@ interface StatisticsProps {
               data[2].turnover
             ],
             borderWidth: 2,
-            backgroundColor: ['rgba(102, 0, 255, 0.8)', 'rgba(0, 34, 255, 0.9)', 'rgba(0, 102, 255, 1)'],
+            backgroundColor: ['rgba(102, 0, 255, 1)', 'rgba(0, 34, 255, 1)', 'rgba(0, 102, 255, 1)'],
             barThickness: 50
           }
         ]
@@ -69,7 +69,7 @@ interface StatisticsProps {
               data[2].profit
             ],
             borderWidth: 2,
-            backgroundColor: ['rgba(0, 251, 255, 0.8)', 'rgba(0, 255, 213, 0.9)', 'rgba(0, 255, 98, 1)'],
+            backgroundColor: ['rgba(0, 251, 255, 1)', 'rgba(0, 255, 213, 1)', 'rgba(0, 255, 98, 1)'],
             barThickness: 50,
           }
         ]
@@ -109,7 +109,7 @@ interface StatisticsProps {
              Math.round (((data[2].turnover - data[1].turnover)/ data[1].turnover)*100)
             ],
             borderWidth: 2,
-            backgroundColor: ['rgba(0, 255, 72, 0.8)', 'rgba(13, 255, 0, 0.9)', 'rgba(38, 255, 0, 1)'],
+            backgroundColor: ['rgba(0, 255, 72, 1)', 'rgba(13, 255, 0, 1)'],
             barThickness: 50,
             barPercentage: 1.0
           }
@@ -150,7 +150,7 @@ interface StatisticsProps {
              Math.round (((data[2].profit - data[1].profit)/ data[1].profit)*100)
             ],
             borderWidth: 2,
-            backgroundColor: ['rgba(255, 238, 0, 0.8)', 'rgba(255, 179, 0, 0.9)', 'rgba(255, 89, 0, 1)'],
+            backgroundColor: ['rgba(255, 238, 0, 1)', 'rgba(255, 179, 0, 1)'],
             barThickness: 50,
             barPercentage: 1.0
           }
