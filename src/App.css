@@ -111,8 +111,7 @@ input[type="button"]:hover{
 
 }
 
-@media (min-width:901px) and (max-width:1920px){
-
+@media (min-width:901px) and (max-width:1979px){
      .nav-bar{
         width: 20dvw;
         height: 100dvh;
