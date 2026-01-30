@@ -34,10 +34,6 @@ function App() {
   return (
     <main className="App">
 
-      <div className='before-nav-bar-display'>
-        <input type="button" id='menu_btn' value="☰"/>
-      </div>
-      
       <div className="nav-bar" id='menu_bar'>
           <button onClick={showData}><span>Data</span></button>
           <button onClick={showStats}><span>Performance</span></button>
