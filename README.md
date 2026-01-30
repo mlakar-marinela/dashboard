@@ -26,3 +26,4 @@ Key functionalities:<br/>
 </br>
 -Responsive UI. The entire content of the dashboard fits acording to any screen width.</br>
 </br>
+Note: This is a project in progress!
