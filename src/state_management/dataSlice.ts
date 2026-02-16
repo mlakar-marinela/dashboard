@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { objData } from "./dataObjects";
+import type { objData } from "../state_management/dataObjects";
 
 
 const financialData1 : objData = {year:2022,turnover:0,profit:0};

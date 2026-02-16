@@ -1,10 +1,10 @@
-import './App.css';
-import Data from './Data';
-import Statistics from './Statistics';
-import Score from './Score';
+import '../components/App.css';
+import Data from '../components/Data.tsx';
+import Statistics from '../components/Statistics.tsx';
+import Score from '../components/Score.tsx';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import type { RootState } from './store';
+import type { RootState } from '../state_management/store';
 
 function App() {
   const financialDatas = useSelector((state:RootState) => state.data_update.financialDatas );
@@ -34,6 +34,10 @@ function App() {
   return (
     <main className="App">
 
+      <div className='before-nav-bar-display'>
+        <input type="button" id='menu_btn' value="☰"/>
+      </div>
+      
       <div className="nav-bar" id='menu_bar'>
           <button onClick={showData}><span>Data</span></button>
           <button onClick={showStats}><span>Performance</span></button>
@@ -60,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default App ;

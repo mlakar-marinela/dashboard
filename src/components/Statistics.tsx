@@ -1,4 +1,4 @@
-import './Statistics.css'
+import '../components/Statistics.css'
 import { Chart } from 'chart.js/auto'
 import { useEffect, useRef } from 'react';
 
@@ -10,6 +10,7 @@ interface StatisticsProps {
   if (!data || data.length < 3) {
     return <div>No data available for statistics</div>;
   }
+
   const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -36,6 +37,7 @@ interface StatisticsProps {
         ]
       },
       options: {
+        responsive: true,
         scales: {
           y: {
             beginAtZero: true
@@ -75,6 +77,7 @@ interface StatisticsProps {
         ]
       },
       options: {
+        responsive: true,
         scales: {
           y: {
             beginAtZero: true,
@@ -98,7 +101,7 @@ interface StatisticsProps {
     }
 
     const chart3 = new Chart(canvasRef3.current, {
-       type: 'bar',
+      type: 'bar',
       data: {
         labels: ['2023', '2024'],
         datasets: [
@@ -116,6 +119,7 @@ interface StatisticsProps {
         ]
       },
       options: {
+        responsive: true,
         scales: {
           y: {
             beginAtZero: true,
@@ -157,6 +161,7 @@ interface StatisticsProps {
         ]
       },
       options: {
+        responsive: true,
         scales: {
           y: {
             beginAtZero: true,
