@@ -38,7 +38,7 @@ function Data() {
 
   }
   return (
-    <form>
+    <form data-testid = 'financial_data_form'>
       <div id='data_entry_progress_bar' ref={dataProgressBar}></div>
       <span id='progress_text' ref={progressText}>{dataIndex.current} out of 3</span>
       <label>Year</label>

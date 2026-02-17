@@ -48,7 +48,7 @@ function Score ({data}: ScoreProps){
   }, [data]);
   
     return (
-      <div className='score_container'>
+      <div className='score_container' data-testid = 'score'>
         <canvas id='score_percentage' ref={canvasRef5}></canvas>
       </div>
     )

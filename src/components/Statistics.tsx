@@ -177,7 +177,7 @@ interface StatisticsProps {
   }, [data]);
 
   return (
-    <div className='stats_container'>
+    <div className='stats_container' data-testid='statistics'>
       <canvas id="chart1" ref={canvasRef1}></canvas>
       <canvas id="chart2" ref={canvasRef2}></canvas>
       <canvas id="chart3" ref={canvasRef3}></canvas>
