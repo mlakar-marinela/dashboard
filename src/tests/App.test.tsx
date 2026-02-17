@@ -15,7 +15,7 @@ test("Data component should render on click", async () => {
   await button.click();
 
   const dataComponent = page.getByTestId('financial_data_form');
-  await expect(dataComponent).toBeVisible();
+  expect(dataComponent).toBeVisible();
 })
 
 test("Statistics component should render on click", async () => {
@@ -25,7 +25,7 @@ test("Statistics component should render on click", async () => {
   await button.click();
 
   const statisticsComponent = page.getByTestId('statistics');
-  await expect(statisticsComponent).toBeVisible();
+  expect(statisticsComponent).toBeVisible();
 })
 
 test("Score component should render on click", async () => {
@@ -35,5 +35,5 @@ test("Score component should render on click", async () => {
   await button.click();
 
   const statisticsComponent = page.getByTestId('score');
-  await expect(statisticsComponent).toBeVisible();
+  expect(statisticsComponent).toBeVisible();
 })

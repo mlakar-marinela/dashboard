@@ -42,7 +42,7 @@ function Data() {
       <div id='data_entry_progress_bar' ref={dataProgressBar}></div>
       <span id='progress_text' ref={progressText}>{dataIndex.current} out of 3</span>
       <label>Year</label>
-      <select id ="yearOptions">
+      <select id ="yearOptions" aria-placeholder='Select the year'>
         <option value = {financialDatas[0].year}>2022</option>
         <option value = {financialDatas[1].year}>2023</option>
         <option value = {financialDatas[2].year}>2024</option>
