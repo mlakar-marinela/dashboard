@@ -9,6 +9,7 @@ The app was made with:<br/>
 -Chart.js<br/> 
 -React<br/>
 -Vite<br/>
+-Vitest<br/>
 <br/>
 Key functionalities:<br/>
 <br/>
