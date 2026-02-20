@@ -51,7 +51,7 @@ function Data() {
       <input type="text" id="data2"  placeholder="Write the turnover"/>
       <label>Profit</label>
       <input type="text" id="data3" placeholder="Write the profit"/>
-      <input type="submit" value="Submit" onClick={handleSubmit} />
+      <input type="submit" value="Submit" data-testid ='submit_button' onClick={handleSubmit} />
     </form>
   );
 }
