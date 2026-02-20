@@ -3,18 +3,13 @@ This project represents a financial dashboard where the user can see their overa
 The app was made with:<br/>
 <br/>
 -HTML<br/>
-<br/>
 -CSS<br/>
-<br/>  
 -TypeScript<br/>
-<br/>
--Redux</br>
-</br>
--Chart.js<br/>
-<br/>  
--REACT<br/>
-<br/>
--VITE<br/>
+-Redux (Toolkit)</br>
+-Chart.js<br/> 
+-React<br/>
+-Vite<br/>
+-Vitest<br/>
 <br/>
 Key functionalities:<br/>
 <br/>
