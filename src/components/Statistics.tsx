@@ -7,10 +7,15 @@ interface StatisticsProps {
 }
   function Statistics({ data }: StatisticsProps) {
 
-  if (!data || data.length < 3) {
-    return <div>No data available for statistics</div>;
-  }
+    const noTurnovers = data.every((item) => item.turnover === 0);
+    const noProfits = data.every((item) => item.profit === 0);
 
+  if (noTurnovers && noProfits) {
+    
+    return <p className='warning_paragraph'>No data available for statistics</p>;
+  }
+  
+  
   const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -177,13 +182,14 @@ interface StatisticsProps {
   }, [data]);
 
   return (
-    <div className='stats_container' data-testid='statistics'>
-      <canvas id="chart1" ref={canvasRef1}></canvas>
-      <canvas id="chart2" ref={canvasRef2}></canvas>
-      <canvas id="chart3" ref={canvasRef3}></canvas>
-      <canvas id="chart4" ref={canvasRef4}></canvas>
-    </div>
-  );
+  
+      <div id="statistics_container" className="stats_container" data-testid="statistics">
+        <canvas id="chart1" ref={canvasRef1}></canvas>
+        <canvas id="chart2" ref={canvasRef2}></canvas>
+        <canvas id="chart3" ref={canvasRef3}></canvas>
+        <canvas id="chart4" ref={canvasRef4}></canvas>
+      </div>
+  )
 }
 
 export default Statistics;

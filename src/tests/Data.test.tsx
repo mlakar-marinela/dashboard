@@ -1,8 +1,8 @@
-import Data from '../components/Data'
+import Data from '../components/Data.tsx'
 import {test, expect} from 'vitest'
 import {page} from 'vitest/browser'
-import { renderWithProvider } from '../utils/test_utils'
-import reducer, {changing_data} from '../state_management/dataSlice'
+import { renderWithProvider } from '../utils/test_utils.tsx'
+import reducer, {changing_data} from '../state_management/dataSlice.ts'
 
 test("Form labels should be visible", async() =>{
     await renderWithProvider(<Data/>);
