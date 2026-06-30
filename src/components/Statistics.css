@@ -26,10 +26,11 @@ canvas {
   align-items: center;
   font-family: 'Times New Roman', Times, serif;
   font-size: 32px;
-  transform: translateX(75dvh);
+  font-weight: bold;
+  transform: translateX(30dvw);
 }
 
-@media (min-width:300px) and (max-width:900px){
+@media (min-width:300px) and (max-width:600px){
   
   .stats_container{
      display: flex;
@@ -44,6 +45,32 @@ canvas {
   canvas{
     transform: translate(4dvw,1dvh);
   }
+
+  .warning_paragraph{
+    font-size: 18px;
+    transform: translateX(10dvw);
+  }
+ 
+}
+
+@media (min-width:601px) and (max-width:900px) {
+
+  .stats_container{
+    display: grid;
+    gap: 2dvw; 
+    width: 40dvw;
+    height: 40dvh;
+  }
+
+  canvas{
+    transform: translate(25dvw,5dvh);
+  }
+
+  .warning_paragraph{
+    font-size: 24px;
+    transform: translateX(10dvw);
+  }
+
 }
 
 @media (min-width:901px) and (max-width:1920px){
@@ -55,7 +82,8 @@ canvas {
     height: 30dvh;
   }
 
-  .canvas{
-    transform: translate(25dvw,-10dvh);
+  canvas{
+    transform: translate(25dvw,-15dvh);
   }
+
 }

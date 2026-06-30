@@ -7,9 +7,12 @@ interface ScoreProps {
 }
 
 function Score ({data}: ScoreProps){
+
+  const noTurnovers = data.every((item) => item.turnover === 0);
+  const noProfits = data.every((item) => item.profit === 0);
    
-    if (!data || data.length < 3) {
-    return <div>No data available for scores</div>;
+    if (noTurnovers && noProfits) {
+    return <p className='warning'>No data available for scores</p>;
   }
 
     const averageTurnover : number = (data[0].turnover + data[1].turnover + data[2].turnover)/3;

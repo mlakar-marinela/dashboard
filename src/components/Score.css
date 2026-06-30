@@ -13,11 +13,26 @@ canvas[id="score_percentage"]{
   
 }
 
+.warning{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  font-weight: bold;
+  transform: translateX(30dvw);
+}
+
 @media (min-width:300px) and (max-width:600px){
   
   .score_container{
     width: 50dvw;
     transform: translate(5dvw, 0dvh);
+  }
+
+  .warning{
+    font-size: 18px;
+    transform: translateX(10dvw);
   }
 }
 
@@ -27,4 +42,10 @@ canvas[id="score_percentage"]{
      width: 50dvw;
      transform: translate(4dvw, 0dvh);
   }
+
+  .warning{
+    font-size: 24px;
+    transform: translateX(10dvw);
+  }
+
 }
