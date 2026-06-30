@@ -8,24 +8,25 @@ interface ScoreProps {
 
 function Score ({data}: ScoreProps){
 
-  const noTurnovers = data.every((item) => item.turnover === 0);
-  const noProfits = data.every((item) => item.profit === 0);
-   
-    if (noTurnovers && noProfits) {
-    return <p className='warning'>No data available for scores</p>;
+  if (data.length < 3 || data.every((item) => item.turnover === 0)) {
+     return <p className='warning'>No data available for scores</p>;
   }
 
-    const averageTurnover : number = (data[0].turnover + data[1].turnover + data[2].turnover)/3;
-    const averageProfit : number = (data[0].profit + data[1].profit + data[2].profit)/3;
-    const profitMargin : number = averageProfit / averageTurnover; 
+  const avgMargin: number = data.reduce((sum, item) => {
+    const margin: number = item.turnover > 0 ? (item.profit / item.turnover) : 0;
+    return sum + margin;
+  }, 0) / data.length;
+
+  const startTurnover: number = data[0].turnover;
+  const endTurnover: number = data[2].turnover;
+  const growth: number = startTurnover > 0  ? ((endTurnover - startTurnover) / startTurnover) : 0;
     
-    console.log(averageTurnover, averageProfit, profitMargin);
+  const score: number = Math.min(100, Math.max(0, (avgMargin * 50) + (growth * 50)));
     
-    const canvasRef5 = useRef <HTMLCanvasElement | null>(null);
+  const canvasRef5 = useRef <HTMLCanvasElement | null>(null);
 
     useEffect (() => {
 
-      
         if(!canvasRef5.current){
             return;
         }
@@ -36,7 +37,7 @@ function Score ({data}: ScoreProps){
                datasets: [
                 {
                     label: 'SCORE',
-                    data: [Math.round(profitMargin*100)]
+                    data: [Math.round(score)]
                 }
                ]
             },
